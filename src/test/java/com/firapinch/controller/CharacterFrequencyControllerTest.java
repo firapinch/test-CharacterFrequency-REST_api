@@ -6,6 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
 
 import java.util.Map;
+import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -23,7 +24,10 @@ public class CharacterFrequencyControllerTest {
     public void testCalculateFrequency() {
         // Arrange
         String input = "aaaaabcccc";
-        Map<Character, Integer> expectedFrequencyMap = Map.of('a', 5, 'c', 4, 'b', 1);
+        Map<Character, Long> expectedFrequencyMap = new HashMap<>();
+        expectedFrequencyMap.put('a', 5L);
+        expectedFrequencyMap.put('c', 4L);
+        expectedFrequencyMap.put('b', 1L);
 
         // Act
         Map<Character, Long> result = controller.calculateFrequency(input);
@@ -36,7 +40,7 @@ public class CharacterFrequencyControllerTest {
     public void testCalculateFrequencyEmptyInput() {
         // Arrange
         String input = "";
-        Map<Character, Integer> expectedFrequencyMap = Map.of();
+        Map<Character, Long> expectedFrequencyMap = new HashMap<>();
 
         // Act
         Map<Character, Long> result = controller.calculateFrequency(input);
@@ -49,7 +53,7 @@ public class CharacterFrequencyControllerTest {
     public void testCalculateFrequencyNullInput() {
         // Arrange
         String input = null;
-        Map<Character, Integer> expectedFrequencyMap = Map.of();
+        Map<Character, Long> expectedFrequencyMap = new HashMap<>();
 
         // Act
         Map<Character, Long> result = controller.calculateFrequency(input);
@@ -58,3 +62,4 @@ public class CharacterFrequencyControllerTest {
         assertEquals(expectedFrequencyMap, result);
     }
 }
+
