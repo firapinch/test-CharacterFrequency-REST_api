@@ -26,7 +26,7 @@ public class CharacterFrequencyControllerTest {
         Map<Character, Integer> expectedFrequencyMap = Map.of('a', 5, 'c', 4, 'b', 1);
 
         // Act
-        Map<Character, Integer> result = controller.calculateFrequency(input);
+        Map<Character, Long> result = controller.calculateFrequency(input);
 
         // Assert
         assertEquals(expectedFrequencyMap, result);
@@ -39,7 +39,7 @@ public class CharacterFrequencyControllerTest {
         Map<Character, Integer> expectedFrequencyMap = Map.of();
 
         // Act
-        Map<Character, Integer> result = controller.calculateFrequency(input);
+        Map<Character, Long> result = controller.calculateFrequency(input);
 
         // Assert
         assertEquals(expectedFrequencyMap, result);
@@ -52,7 +52,7 @@ public class CharacterFrequencyControllerTest {
         Map<Character, Integer> expectedFrequencyMap = Map.of();
 
         // Act
-        Map<Character, Integer> result = controller.calculateFrequency(input);
+        Map<Character, Long> result = controller.calculateFrequency(input);
 
         // Assert
         assertEquals(expectedFrequencyMap, result);
